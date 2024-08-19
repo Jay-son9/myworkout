@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Workout</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- <script src="main.js"></script> -->
+
+</head>
+
+<body>
+
+    <main>
+        <div class="title">
+            <h1 class="one">My Workout</h1>
+            <img src="/img/img-1.png">
+        </div>
+
+        <div id="time"> </div>
+
+        <div class="tabs">
+            <div class="logo-wrapper" onclick="toggleDisplay('myDiv')">
+                <img src="/img/img-2.png" class="top">
+                <p>weights</p>
+            </div>
+            <div class="logo-wrapper" onclick="toggleDisplay('myDiv2')">
+                <img src="/img/img-9.png" class="top">
+                <p>resistance</p>
+            </div>
+            <div class="logo-wrapper" onclick="toggleDisplay('myDiv3')">
+                <img src="/img/img-15.png" class="top">
+                <p>cardio</p>
+            </div>
+            <div class="logo-wrapper" onclick="toggleDisplay('myDiv4')">
+                <img src="/img/notes.png" class="top">
+                <p>notes</p>
+            </div>
+        </div>
+
+        <!-- Static Textarea and Input Pairs -->
+
+        <div id="myDiv">
+            <div class="textarea-group">
+                <h2>Weight Training</h2>
+
+                <span class="cb">
+                    <label class="container">
+                        <div class="img-wrapper">
+                            <img src="/img/img-2.png">
+                            <input type="checkbox" class="cb-btn">
+                            <span class="checkmark"></span>
+                        </div>
+                    </label>
+                    <label class="container">
+                        <div class="img-wrapper">
+                            <img src="/img/img-3.png">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                    </label>
+                    <label class="container">
+                        <div class="img-wrapper">
+                            <img src="/img/img-4.png">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                    </label>
+                    <label class="container">
+                        <div class="img-wrapper">
+                            <img src="/img/img-5.png">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                    </label>
+                    <label class="container">
+                        <div class="img-wrapper">
+                            <img src="/img/img-6.png">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                    </label>
+                </span>
+
+                <label for="textarea1">Excercises</label>
+                <textarea id="textarea1" name="textarea1"
+                    placeholder="Please enter your excercises here...."></textarea>
+                <button type="button" class="btn-1" onclick="addTextareaValue(1)">Add </button>
+                <div class="list-group">
+                    <ul id="listTextarea1"></ul>
+                </div>
+                <!----------------------------------------------------------------->
+                <div class="sets-wrapper">
+                    <div class="sw">
+                        <h6>1</h6>
+                    </div>
+
+                    <div class="sets-one">
+                        <label class="sets-info" for="setsDropdown">Sets:</label>
+                        <select id="setsDropdown">
+                            <option value="">Select an option</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <p class="sets"># Sets: <span id="selectedSets">None</span></p>
+                    </div>
+
+                    <div class="sets-two">
+                        <label class="sets-info" for="repsDropdown">Reps:</label>
+                        <select id="repsDropdown">
+                            <option value="">Select an option</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <p class="sets"># Reps: <span id="selectedReps">None</span></p>
+                    </div>
+                </div>
+
+                <div class="sets-wrapper">
+                    <div class="sw">
+                        <h6>2</h6>
+                    </div>
+
+                    <div class="sets-one">
+                        <label class="sets-info" for="setsDropdown">Sets:</label>
+                        <select id="setsDropdown2">
+                            <option value="">Select an option</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <p class="sets"># Sets: <span id="selectedSets2">None</span></p>
+                    </div>
+
+                    <div class="sets-two">
+                        <label class="sets-info" for="repsDropdown">Reps:</label>
+                        <select id="repsDropdown2">
+                            <option value="">Select an option</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <p class="sets"># Reps: <span id="selectedReps2">None</span></p>
+                    </div>
+                </div>
+
+                <div class="sets-wrapper">
+                    <div class="sw">
+                        <h6>3</h6>
+                    </div>
+
+                    <div class="sets-one">
+                        <label class="sets-info" for="setsDropdown">Sets:</label>
+                        <select id="setsDropdown3">
+                            <option value="">Select an option</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <p class="sets"># Sets: <span id="selectedSets3">None</span></p>
+                    </div>
+
+                    <div class="sets-two">
+                        <label class="sets-info" for="repsDropdown">Reps:</label>
+                        <select id="repsDropdown3">
+                            <option value="">Select an option</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <p class="sets"># Reps: <span id="selectedReps3">None</span></p>
+                    </div>
+                </div>
+
+                <div class="sets-wrapper">
+                    <div class="sw">
+                        <h6>4</h6>
+                    </div>
+
+                    <div class="sets-one">
+                        <label class="sets-info" for="setsDropdown">Sets:</label>
+                        <select id="setsDropdown4">
+                            <option value="">Select an option</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <p class="sets"># Sets: <span id="selectedSets4">None</span></p>
+                    </div>
+
+                    <div class="sets-two">
+                        <label class="sets-info" for="repsDropdown">Reps:</label>
+                        <select id="repsDropdown4">
+                            <option value="">Select an option</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <p class="sets"># Reps: <span id="selectedReps4">None</span></p>
+                    </div>
+                </div>
+
+                <div class="sets-wrapper">
+                    <div class="sw">
+                        <h6>5</h6>
+                    </div>
+                    <div class="sets-one">
+
+                        <label class="sets-info" for="setsDropdown">Sets:</label>
+                        <select id="setsDropdown5">
+                            <option value="">Select an option</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <p class="sets"># Sets: <span id="selectedSets5">None</span></p>
+                    </div>
+
+                    <div class="sets-two">
+                        <label class="sets-info" for="repsDropdown">Reps:</label>
+                        <select id="repsDropdown5">
+                            <option value="">Select an option</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <p class="sets"># Reps: <span id="selectedReps5">None</span></p>
+                    </div>
+                </div>
+
+                <!-- ---------------------------------------------------------------------------------------------->
+
+                <div class="input-group">
+                    <label for="input1">Workout Details:</label>
+                    <input type="text" id="input1" name="input1" placeholder="Enter your details here...">
+                    <button type="button" class="btn-2" onclick="addInputValue(1)">Add</button>
+                    <div class="list-group">
+                        <div></div>
+                        <ul id="listInput1"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---------------------------------------------------------------------------->
+
+        <div id="myDiv2">
+
+            <div class="textarea-group">
+                <h2>Calisthenics</h2>
+
+                <span class="cb">
+                    <label class="container">
+                        <div class="img-wrapper">
+                            <img src="/img/img-7.png">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                    </label>
+                    <label class="container">
+                        <div class="img-wrapper">
+                            <img src="/img/img-11.png">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                    </label>
+                    <label class="container">
+                        <div class="img-wrapper">
+                            <img src="/img/img-12.png">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                    </label>
+                    <label class="container">
+                        <div class="img-wrapper">
+                            <img src="/img/img-13.png">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                    </label>
+                    <label class="container">
+                        <div class="img-wrapper">
+                            <img src="/img/img-14.png">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                    </label>
+                </span>
+
+                <label for="textarea2">Resistance / HIT</label>
+                <textarea id="textarea2" name="textarea2"
+                    placeholder="Please enter your excercises here...."></textarea>
+                <button type="button" class="btn-1" onclick="addTextareaValue(2)">Add</button>
+                <div class="list-group">
+                    <div></div>
+                    <ul id="listTextarea2"></ul>
+                </div>
+                <!---------------------------------------------------------->
+                <div class="sets-wrapper">
+
+                    <div class="sets-one">
+                        <label class="sets-info" for="setsDropdown">Sets:</label>
+                        <select id="setsDropdown2">
+                            <option value="">Select an option</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <p class="sets"># Sets: <span id="selectedSets2">None</span></p>
+                    </div>
+
+                    <div class="sets-two">
+                        <label class="sets-info" for="repsDropdown">Reps:</label>
+                        <select id="repsDropdown2">
+                            <option value="">Select an option</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <p class="sets"># Reps: <span id="selectedReps2">None</span></p>
+                    </div>
+
+                </div>
+
+                <!------------------------------------------------------------->
+
+                <div class="input-group">
+                    <label for="input2">Workout Details:</label>
+                    <input type="text" id="input2" name="input2">
+                    <button type="button" class="btn-2" onclick="addInputValue(2)"># of reps</button>
+                    <div class="list-group">
+                        <div></div>
+                        <ul id="listInput2"></ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!---------------------------------------------------------------------------------------------------------------------->
+
+        <div id="myDiv3">
+
+            <div class="textarea-group">
+                <h2> Cardio Training</h2>
+
+                <span class="cb">
+                    <label class="container">
+                        <div class="img-wrapper">
+                            <img src="/img/img-10.png">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                    </label>
+                    <label class="container">
+                        <div class="img-wrapper">
+                            <img src="/img/img-15.png">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                    </label>
+                    <label class="container">
+                        <div class="img-wrapper">
+                            <img src="/img/img-16.png">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                    </label>
+                    <label class="container">
+                        <div class="img-wrapper">
+                            <img src="/img/img-18.png">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                    </label>
+                    <label class="container">
+                        <div class="img-wrapper">
+                            <img src="/img/img-17.png">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                    </label>
+                </span>
+
+                <label for="textarea3">Cardio</label>
+                <textarea id="textarea3" name="textarea3"
+                    placeholder="Please enter your excercises here...."></textarea>
+                <button type="button" class="btn-1" onclick="addTextareaValue(3)">Add</button>
+
+                <div class="container2">
+
+                    <div class="clock-wrapper">
+                        <div id="time">
+                            <span class="digit" id="hr">
+                                00</span>
+                            <span class="txt">Hr</span>
+                            <span class="digit" id="min">
+                                00</span>
+                            <span class="txt">Min</span>
+                            <span class="digit" id="sec">
+                                00</span>
+                            <span class="txt">Sec</span>
+                            <span class="digit" id="count">
+                                00</span>
+                        </div>
+                        <div id="buttons">
+                            <button class="btn-5" id="start">
+                                Start</button>
+                            <button class="btn-6" id="stop">
+                                Stop</button>
+                            <button class="btn-7" id="reset">
+                                Reset</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-group">
+                    <div></div>
+                    <ul id="listTextarea3"></ul>
+                </div>
+
+                <div class="input-group">
+                    <label for="input3">Time Spent On Activity:</label>
+                    <input type="text" id="input3" name="input3" placeholder="Please enter time...">
+
+                    <div class="watch-wrapper">
+                        <img class="watch" src="img/stopwatch.png">
+                        <button type="button" class="btn-4" onclick="addInputValue(3)">+ Time</button>
+                    </div>
+
+                    <div class="list-group">
+                        <div></div>
+                        <ul id="listInput3"></ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--------------------------------------------------------------------------------------------------------->
+        <div id="myDiv4">
+            <div class="textarea-group">
+                <label for="textarea4">Notes:</label>
+                <textarea id="textarea4" name="textarea1" placeholder="Your notes here...."></textarea>
+                <button type="button" class="btn-1" onclick="addTextareaValue(4)">Add</button>
+                <div class="list-group">
+                    <div></div>
+                    <ul id="listTextarea4"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg">
+           
+            <div class="btn-wrapper">
+                <button type="button" class="btn-3" onclick="clearSelectedOutputs()">Clear Selected</button>
+            </div>
+
+            <!-- BMI -->
+            <div class="btn-wrapper">
+                <button class="btn-3" onclick="toggleDisplay('myDiv5')">BMI</button>
+            </div>
+
+
+            <div id="myDiv5" class="bmi">
+                <div class="main-wrapper">
+                    <h2 class="">BMI CALCULATOR</h2>
+                    <div class="bmi-heads">
+                        <div id="bmi-usc-head" class="bmi-head active-head">
+                            <h2>US Units</h2>
+                        </div>
+                        <div id="bmi-si-head" class="bmi-head">
+                            <h2>Metric Units</h2>
+                        </div>
+                    </div>
+
+                    <div class="bmi-contents">
+                        <!-- bmi us units -->
+                        <div class="bmi-content" id="bmi-usc">
+                            <form>
+                                <div class="form-group">
+                                    <p>Age</p>
+                                    <input type="text" class="form-control" placeholder="2 - 120" id="age1">
+                                </div>
+
+                                <div class="form-group col-3">
+                                    <p>Gender</p>
+                                    <div>
+                                        <input type="radio" name="gender" id="male" value="male" checked>
+                                        <label for="male">Male</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="gender" id="female" value="female">
+                                        <label for="female">Female</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-3">
+                                    <p>Height</p>
+                                    <input type="text" class="form-control" id="feet" placeholder="feet">
+                                    <input type="text" class="form-control" id="inches" placeholder="inches">
+                                </div>
+
+                                <div class="form-group">
+                                    <p>Weight</p>
+                                    <input type="text" class="form-control" id="pounds" placeholder="pounds">
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- bmi metric units -->
+                        <div class="bmi-content" id="bmi-si">
+                            <form>
+                                <div class="form-group">
+                                    <p>Age</p>
+                                    <input type="text" class="form-control" placeholder="2 - 120" id="age2">
+                                </div>
+
+                                <div class="form-group col-3">
+                                    <p>Gender</p>
+                                    <div>
+                                        <input type="radio" name="gender" id="male" value="male" checked>
+                                        <label class="gender" for="male">Male</label>
+                                    </div>
+
+                                    <div>
+                                        <input type="radio" name="gender" id="female" value="female">
+                                        <label class="gender" for="female">Female</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <p>Height</p>
+                                    <input type="text" class="form-control" id="cm" placeholder="cm">
+                                </div>
+
+                                <div class="form-group">
+                                    <p>Weight</p>
+                                    <input type="text" class="form-control" id="kg" placeholder="kg">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="btns">
+                        <button type="button" id="calc-btn" class="btn">Calculate</button>
+                        <button type="button" id="clr-btn" class="btn">Clear</button>
+                    </div>
+
+                    <div class="output">
+                        <span class="alert-error">All fields required!</span>
+                        <div class="bmi-output">
+                            <h3 id="bmi-value"></h3>
+                            <p id="bmi-category"></p>
+                            <p id="bmi-gender"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+        </div>      
+    </main>
+    <div class="me">
+        <p>@murray 2024</p>
+    </div>
+    <!--  Calander  -->
+    <script>
+
+        function updateTime() {
+            const now = new Date();
+            let hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+
+            // Convert 24-hour time to 12-hour time
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+
+            // Format minutes and seconds
+            const strMinutes = minutes < 10 ? '0' + minutes : minutes;
+            const strSeconds = seconds < 10 ? '0' + seconds : seconds;
+
+            // Create the time string
+            const timeString = `${hours}:${strMinutes}:${strSeconds} ${ampm}`;
+
+            // Update the HTML element with the time string
+            document.getElementById('time').innerText = timeString;
+        }
+
+        // Update the time every second
+        setInterval(updateTime, 1000);
+
+        // Initial call to set the time immediately on page load
+        window.onload = updateTime;
+
+        // Function to open and close selected excercise icons
+
+        function toggleDisplay(divId) {
+            var x = document.getElementById(divId);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to handle dropdown initialization
+            const initializeDropdown = (dropdownId, displaySpanId, localStorageKey) => {
+                const dropdown = document.getElementById(dropdownId);
+                const displaySpan = document.getElementById(displaySpanId);
+
+                // Load the previously saved selection from localStorage if available
+                const savedSelection = localStorage.getItem(localStorageKey);
+                if (savedSelection) {
+                    displaySpan.textContent = savedSelection;
+                    dropdown.value = savedSelection;
+                }
+
+                // Event listener for dropdown change
+                dropdown.addEventListener('change', () => {
+                    const selectedValue = dropdown.value;
+                    displaySpan.textContent = selectedValue || 'None';
+                    // Save the selected value to localStorage
+                    localStorage.setItem(localStorageKey, selectedValue);
+                });
+            };
+
+            // Initialize each dropdown
+            initializeDropdown('setsDropdown', 'selectedSets', 'selectedSets');
+            initializeDropdown('repsDropdown', 'selectedReps', 'selectedReps');
+            initializeDropdown('setsDropdown2', 'selectedSets2', 'selectedSets2');
+            initializeDropdown('repsDropdown2', 'selectedReps2', 'selectedReps2');
+            initializeDropdown('setsDropdown3', 'selectedSets3', 'selectedSets3');
+            initializeDropdown('repsDropdown3', 'selectedReps3', 'selectedReps3');
+            initializeDropdown('setsDropdown4', 'selectedSets4', 'selectedSets4');
+            initializeDropdown('repsDropdown4', 'selectedReps4', 'selectedReps4');
+            initializeDropdown('setsDropdown5', 'selectedSets5', 'selectedSets5');
+            initializeDropdown('repsDropdown5', 'selectedReps5', 'selectedReps5');
+        });
+
+        // Function to add a textarea value to the list and localStorage
+        function addTextareaValue(index) {
+            const textarea = document.getElementById(`textarea${index}`);
+            const value = textarea.value;
+            if (value) {
+                let storedValues = JSON.parse(localStorage.getItem(`textarea${index}`)) || [];
+                storedValues.push(value);
+                localStorage.setItem(`textarea${index}`, JSON.stringify(storedValues));
+                displayTextareaList(index);
+                textarea.value = ''; // Clear the textarea
+            }
+        }
+
+        // Function to add an input value to the list and localStorage
+        function addInputValue(index) {
+            const input = document.getElementById(`input${index}`);
+            const value = input.value;
+            if (value) {
+                let storedValues = JSON.parse(localStorage.getItem(`input${index}`)) || [];
+                storedValues.push(value);
+                localStorage.setItem(`input${index}`, JSON.stringify(storedValues));
+                displayInputList(index);
+                input.value = ''; // Clear the input field
+            }
+        }
+
+        // Function to display the textarea list from localStorage
+        function displayTextareaList(index) {
+            const listElement = document.getElementById(`listTextarea${index}`);
+            listElement.innerHTML = '';
+            let storedValues = JSON.parse(localStorage.getItem(`textarea${index}`)) || [];
+            storedValues.forEach((value, i) => {
+                const li = document.createElement('li');
+                li.innerHTML = `<input type="checkbox" id="checkboxTextarea${index}_${i}" value="${i}"> ${value} <button class="test" onclick="removeTextareaValue(${index}, ${i})"><img class="test2" src="img/delete.png"></button>`;
+                listElement.appendChild(li);
+            });
+        }
+
+        // Function to display the input list from localStorage
+        function displayInputList(index) {
+            const listElement = document.getElementById(`listInput${index}`);
+            listElement.innerHTML = '';
+            let storedValues = JSON.parse(localStorage.getItem(`input${index}`)) || [];
+            storedValues.forEach((value, i) => {
+                const li = document.createElement('li');
+                li.innerHTML = `<input type="checkbox" id="checkboxInput${index}_${i}" value="${i}"> ${value} <button class="test" onclick="removeInputValue(${index}, ${i})"><img class="test2" src="img/delete.png"></button>`;
+                listElement.appendChild(li);
+            });
+        }
+
+        // Function to remove a textarea value from the list and localStorage
+        function removeTextareaValue(index, itemIndex) {
+            let storedValues = JSON.parse(localStorage.getItem(`textarea${index}`)) || [];
+            storedValues.splice(itemIndex, 1);
+            localStorage.setItem(`textarea${index}`, JSON.stringify(storedValues));
+            displayTextareaList(index);
+        }
+
+        // Function to remove an input value from the list and localStorage
+        function removeInputValue(index, itemIndex) {
+            let storedValues = JSON.parse(localStorage.getItem(`input${index}`)) || [];
+            storedValues.splice(itemIndex, 1);
+            localStorage.setItem(`input${index}`, JSON.stringify(storedValues));
+            displayInputList(index);
+        }
+
+        // Function to clear selected output values from the page
+        function clearSelectedOutputs() {
+            for (let i = 1; i <= 10; i++) {
+                const checkboxesTextarea = document.querySelectorAll(`#listTextarea${i} input[type="checkbox"]:checked`);
+                checkboxesTextarea.forEach((checkbox) => {
+                    const itemIndex = checkbox.value;
+                    removeTextareaValue(i, itemIndex);
+                });
+                const checkboxesInput = document.querySelectorAll(`#listInput${i} input[type="checkbox"]:checked`);
+                checkboxesInput.forEach((checkbox) => {
+                    const itemIndex = checkbox.value;
+                    removeInputValue(i, itemIndex);
+                });
+            }
+        }
+
+        // Function to load and display saved values from localStorage on page load
+        function loadInputs() {
+            for (let i = 1; i <= 10; i++) {
+                displayTextareaList(i);
+                displayInputList(i);
+            }
+        }
+
+        // Initialize and load saved inputs on page load
+        window.onload = function () {
+            loadInputs();
+        };
+
+        // Stop watch section 
+        let startBtn = document.getElementById('start');
+        let stopBtn = document.getElementById('stop');
+        let resetBtn = document.getElementById('reset');
+
+        let hour = 00;
+        let minute = 00;
+        let second = 00;
+        let count = 00;
+
+        startBtn.addEventListener('click', function () {
+            timer = true;
+            stopWatch();
+        });
+
+        stopBtn.addEventListener('click', function () {
+            timer = false;
+        });
+
+        resetBtn.addEventListener('click', function () {
+            timer = false;
+            hour = 0;
+            minute = 0;
+            second = 0;
+            count = 0;
+            document.getElementById('hr').innerHTML = "00";
+            document.getElementById('min').innerHTML = "00";
+            document.getElementById('sec').innerHTML = "00";
+            document.getElementById('count').innerHTML = "00";
+        });
+
+        function stopWatch() {
+            if (timer) {
+                count++;
+
+                if (count == 100) {
+                    second++;
+                    count = 0;
+                }
+
+                if (second == 60) {
+                    minute++;
+                    second = 0;
+                }
+
+                if (minute == 60) {
+                    hour++;
+                    minute = 0;
+                    second = 0;
+                }
+
+                let hrString = hour;
+                let minString = minute;
+                let secString = second;
+                let countString = count;
+
+                if (hour < 10) {
+                    hrString = "0" + hrString;
+                }
+
+                if (minute < 10) {
+                    minString = "0" + minString;
+                }
+
+                if (second < 10) {
+                    secString = "0" + secString;
+                }
+
+                if (count < 10) {
+                    countString = "0" + countString;
+                }
+
+                document.getElementById('hr').innerHTML = hrString;
+                document.getElementById('min').innerHTML = minString;
+                document.getElementById('sec').innerHTML = secString;
+                document.getElementById('count').innerHTML = countString;
+                setTimeout(stopWatch, 10);
+            }
+        }
+
+        // bmi
+        const BMI_HEADS = document.querySelectorAll('.bmi-head');
+        const BMI_USC = document.getElementById('bmi-usc');
+        const BMI_SI = document.getElementById('bmi-si');
+        const CALC_BTN = document.getElementById('calc-btn');
+        const CLR_BTN = document.getElementById('clr-btn');
+        let activeForm;
+
+        // event listeners
+        window.addEventListener('DOMContentLoaded', () => {
+            BMI_USC.classList.add('show-bmi');
+            activeForm = "bmi-usc";
+        });
+
+        CALC_BTN.addEventListener('click', performBMICalc);
+        CLR_BTN.addEventListener('click', () => {
+            let forms = [...document.forms];
+            forms.forEach(form => form.reset());
+            clearBMIInfo();
+        });
+
+        // clear BMI Info
+        function clearBMIInfo() {
+            document.getElementById('bmi-value').innerHTML = "";
+            document.getElementById('bmi-category').innerHTML = "";
+            document.getElementById('bmi-gender').innerHTML = "";
+        }
+
+        // bmi calculation form toggle
+        BMI_HEADS.forEach(bmiHead => {
+            bmiHead.addEventListener('click', () => {
+                if (bmiHead.id === "bmi-usc-head") {
+                    removeActiveClass();
+                    clearBMIInfo();
+                    bmiHead.classList.add('active-head');
+                    BMI_SI.classList.remove('show-bmi');
+                    BMI_USC.classList.add('show-bmi');
+                    activeForm = "bmi-usc";
+                }
+                if (bmiHead.id === "bmi-si-head") {
+                    removeActiveClass();
+                    clearBMIInfo();
+                    bmiHead.classList.add('active-head');
+                    BMI_USC.classList.remove('show-bmi');
+                    BMI_SI.classList.add('show-bmi');
+                    activeForm = "bmi-si";
+                }
+            });
+        });
+
+        // remove active class from heads
+        function removeActiveClass() {
+            BMI_HEADS.forEach(bmiHead => {
+                bmiHead.classList.remove('active-head');
+            });
+        }
+
+        // main bmi calculation function
+        function performBMICalc() {
+            let BMIInfo = getUserInput();
+            if (BMIInfo) printBMIResult(BMIInfo);
+        }
+
+        // get input values
+        function getUserInput() {
+            let status;
+            // get input values from us units
+            if (activeForm === "bmi-usc") {
+                let age = document.getElementById('age1').value,
+                    gender = document.querySelector('#bmi-usc input[name = "gender"]:checked').value,
+                    heightFeet = document.getElementById('feet').value,
+                    heightInches = document.getElementById('inches').value,
+                    weightPounds = document.getElementById('pounds').value;
+
+                status = checkInputStatus([age, heightFeet, heightInches, weightPounds]);
+
+                if (status == true) {
+                    return calculateBMI({
+                        gender,
+                        age,
+                        height: parseFloat(heightFeet) * 12 + parseFloat(heightInches),
+                        weight: parseFloat(weightPounds)
+                    });
+                }
+            }
+
+            // get input values form metric units
+            if (activeForm === "bmi-si") {
+                let age = document.getElementById('age2').value,
+                    gender = document.querySelector('#bmi-si input[name = "gender"]:checked').value,
+                    heightCm = document.getElementById('cm').value,
+                    weightKg = document.getElementById('kg').value;
+
+                status = checkInputStatus([age, heightCm, weightKg]);
+
+                if (status === true) {
+                    return calculateBMI({
+                        gender,
+                        age,
+                        height: parseFloat(heightCm) / 100,
+                        weight: parseFloat(weightKg)
+                    });
+                }
+            }
+
+            document.querySelector('.alert-error').style.display = "block";
+            setTimeout(() => {
+                document.querySelector('.alert-error').style.display = "none";
+            }, 1000);
+            return false;
+        }
+
+        function checkInputStatus(inputs) {
+            for (let i = 0; i < inputs.length; i++) {
+                if (inputs[i].trim() === "" || isNaN(inputs[i])) return false;
+            }
+            return true;
+        }
+
+        // calculate BMI Value
+        function calculateBMI(values) {
+            let BMI;
+            if (activeForm === 'bmi-usc') {
+                BMI = (703 * (values.weight / Math.pow(values.height, 2))).toFixed(2);
+            } else {
+                BMI = (values.weight / Math.pow(values.height, 2)).toFixed(2);
+            }
+            return { gender: values.gender, BMI };
+        }
+
+        // print BMI result information
+        function printBMIResult(BMIInfo) {
+            document.getElementById('bmi-value').innerHTML = `${BMIInfo.BMI} kg/m<sup>2</sup>`;
+
+            let bmiCategory;
+            if (BMIInfo.BMI < 18.5) {
+                bmiCategory = "Underweight";
+            } else if (BMIInfo.BMI >= 18.5 && BMIInfo.BMI <= 24.9) {
+                bmiCategory = "Normal Weight";
+            } else if (BMIInfo.BMI >= 25 && BMIInfo.BMI <= 29.9) {
+                bmiCategory = "Overweight";
+            } else {
+                bmiCategory = "Obesity";
+            }
+
+            document.getElementById('bmi-category').innerHTML = `${bmiCategory}`;
+            document.getElementById('bmi-gender').innerHTML = BMIInfo.gender;
+        }
+
+    </script>
+</body>
+
+</html>
